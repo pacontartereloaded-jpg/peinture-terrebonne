@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Genera una nueva imagen hero para la pagina principal.
-Escena: sala de estar con pared de acento en verde bosque.
-Guarda el composite antes/despues en public/realisations/.
+Escena: comedor con pared de acento azul marino.
+Metodo identico a generar_imagenes_v3.py:
+  1. AVANT generado solo con texto
+  2. APRES generado con [imagen_avant, prompt] -> coherencia garantizada
+  3. Composite lado a lado guardado en public/realisations/
 """
 
 import io
@@ -31,37 +34,40 @@ if not API_KEY:
 MODEL = "gemini-3.1-flash-image-preview"
 OUTPUT_PATH = Path(__file__).parent / "public" / "realisations" / "terrebonne-sejour-before-after.png"
 
+client = genai.Client(api_key=API_KEY)
+
 PROMPT_AVANT = (
-    "Photorealistic wide-angle interior photo of a living room with old dull beige walls. "
-    "Large comfortable light grey sofa facing the camera with three pillows neatly stacked. "
-    "Wooden coffee table in center with nothing on it. "
-    "Floor lamp with white shade in far right corner. "
-    "Large window on the left wall with beige linen curtains fully closed. "
-    "Empty floating shelf on the back wall. TV mounted on the right wall. "
-    "Light hardwood flooring. Flat dull lighting, dated look. "
-    "Real estate photography, wide angle, 1:1 square crop."
+    "Photorealistic wide-angle photo of a living room with old dull faded beige walls. "
+    "Large light grey fabric sofa centered against the far wall facing the camera, "
+    "three matching pillows neatly stacked on it. "
+    "Rectangular wooden coffee table centered in front of sofa with nothing on it. "
+    "Floor lamp with white shade standing in the right corner. "
+    "Large window on the left wall, beige linen curtains fully closed blocking all light. "
+    "White floating shelf on back wall above the sofa, completely empty. "
+    "Light hardwood flooring. Flat dull lighting, dated worn-out look. "
+    "Real estate photography, wide angle lens, sharp focus, 1:1 square format."
 )
 
 PROMPT_APRES = (
-    "This is the exact same living room after a professional painting renovation. "
-    "Same room layout, same camera angle, same sofa position, same window, same TV wall, same lamp. "
-    "The back accent wall is now painted in rich deep forest green (Benjamin Moore Tarrytown Green). "
-    "The other three walls are freshly painted in crisp warm white. White ceiling. "
-    "Small lived-in details added: "
-    "a plaid throw blanket draped over one sofa arm, "
-    "two cushions rearranged casually, "
-    "a white ceramic vase with dried pampas grass on the coffee table, "
-    "a design book lying flat on the coffee table, "
-    "curtains now open letting in bright natural light, "
-    "a small plant on the floating shelf. "
-    "Do NOT move furniture, change window position, or add new architectural elements. "
-    "Real estate photography, wide angle, bright and welcoming, 1:1 square crop."
+    "This is the exact same living room after a professional interior painting job. "
+    "Same room, same camera angle, same sofa position, same coffee table, same lamp corner, "
+    "same window on the left, same floating shelf above sofa, same hardwood floor. "
+    "The back wall behind the sofa is now painted in rich deep navy blue. "
+    "The three remaining walls and ceiling are freshly painted crisp warm white. "
+    "Small natural lived-in details added only: "
+    "a folded textured throw blanket draped over the left sofa arm, "
+    "the three pillows rearranged — two flat and one propped, "
+    "a white ceramic vase with dried pampas grass on the left side of the coffee table, "
+    "a hardcover design book lying flat on the right side of the coffee table, "
+    "the curtains now open halfway letting in warm natural light, "
+    "a small potted monstera plant on the floating shelf. "
+    "Do NOT move furniture, add windows, change room layout, or alter the floor. "
+    "Professional real estate photography, bright and welcoming, 1:1 square format."
 )
 
 
-def generer_image(prompt: str, label: str) -> Image.Image | None:
-    client = genai.Client(api_key=API_KEY)
-    print(f"  Generando {label}...")
+def generar_avant(prompt: str) -> Image.Image | None:
+    print("  [1/2] Generando AVANT (solo texto)...")
     try:
         response = client.models.generate_content(
             model=MODEL,
@@ -73,12 +79,34 @@ def generer_image(prompt: str, label: str) -> Image.Image | None:
         for part in response.candidates[0].content.parts:
             if part.inline_data is not None:
                 img = Image.open(io.BytesIO(part.inline_data.data))
-                print(f"  OK {label}: {img.size}")
+                print(f"  OK AVANT: {img.size}")
                 return img
-        print(f"  !! Sin imagen para {label}")
+        print("  !! Sin imagen en la respuesta AVANT")
         return None
     except Exception as e:
-        print(f"  ERROR {label}: {e}")
+        print(f"  ERROR AVANT: {e}")
+        return None
+
+
+def generar_apres(imagen_avant: Image.Image, prompt: str) -> Image.Image | None:
+    print("  [2/2] Generando APRES (imagen AVANT + prompt)...")
+    try:
+        response = client.models.generate_content(
+            model=MODEL,
+            contents=[imagen_avant, prompt],
+            config=types.GenerateContentConfig(
+                response_modalities=["IMAGE"],
+            ),
+        )
+        for part in response.candidates[0].content.parts:
+            if part.inline_data is not None:
+                img = Image.open(io.BytesIO(part.inline_data.data))
+                print(f"  OK APRES: {img.size}")
+                return img
+        print("  !! Sin imagen en la respuesta APRES")
+        return None
+    except Exception as e:
+        print(f"  ERROR APRES: {e}")
         return None
 
 
@@ -86,27 +114,28 @@ def combinar_lado_a_lado(img_avant: Image.Image, img_apres: Image.Image, size: i
     half = size // 2
     left = img_avant.resize((half, size), Image.LANCZOS)
     right = img_apres.resize((half, size), Image.LANCZOS)
-    combined = Image.new("RGB", (size, size), (255, 255, 255))
-    combined.paste(left, (0, 0))
-    combined.paste(right, (half, 0))
-    return combined
+    composite = Image.new("RGB", (size, size), (255, 255, 255))
+    composite.paste(left, (0, 0))
+    composite.paste(right, (half, 0))
+    return composite
 
 
 def main():
     print("=" * 55)
-    print("  Peinture Terrebonne — Nueva imagen hero")
+    print("  Peinture Terrebonne - Nueva imagen hero")
     print(f"  Modelo : {MODEL}")
+    print(f"  Metodo : AVANT texto -> APRES [img+texto] (v3)")
     print(f"  Destino: {OUTPUT_PATH}")
     print("=" * 55)
 
-    img_avant = generer_image(PROMPT_AVANT, "AVANT")
+    img_avant = generar_avant(PROMPT_AVANT)
     if img_avant is None:
-        print("FALLO: no se pudo generar la imagen AVANT")
+        print("FALLO: no se pudo generar AVANT")
         sys.exit(1)
 
-    img_apres = generer_image(PROMPT_APRES, "APRES")
+    img_apres = generar_apres(img_avant, PROMPT_APRES)
     if img_apres is None:
-        print("FALLO: no se pudo generar la imagen APRES")
+        print("FALLO: no se pudo generar APRES")
         sys.exit(1)
 
     composite = combinar_lado_a_lado(img_avant, img_apres, size=1024)
