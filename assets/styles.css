@@ -53,7 +53,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero { position: relative; overflow: hidden; padding: 78px 0 48px; }
 .hero:before { content: ""; position: absolute; inset: -140px -120px auto auto; width: 430px; height: 430px; background: radial-gradient(circle, rgba(200,16,46,.18), transparent 65%); pointer-events: none; }
-.hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; gap: 48px; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
 .eyebrow { display: inline-flex; gap: 8px; align-items: center; color: var(--red); background: var(--red-soft); border: 1px solid rgba(200,16,46,.12); border-radius: 999px; padding: 7px 12px; font-weight: 900; font-size: .86rem; }
 h1, h2, h3 { line-height: 1.08; letter-spacing: -.045em; margin: 0 0 18px; }
 h1 { font-size: clamp(2.55rem, 6vw, 5.4rem); }
@@ -67,7 +67,11 @@ p { margin: 0 0 18px; }
 .trust-card strong { display: block; color: var(--red-dark); font-size: 1.05rem; }
 .hero-card { background: #fff; border: 1px solid var(--line); border-radius: 34px; padding: 16px; box-shadow: var(--shadow); position: relative; animation: floatIn .8s ease both; }
 .hero-card .badge { position: absolute; left: 28px; top: 28px; z-index: 2; background: #fff; border-radius: 999px; padding: 9px 13px; font-weight: 900; color: var(--red-dark); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
-.hero-visual { border-radius: 26px; overflow: hidden; background: #f4f4f4; border: 1px solid var(--line); }
+.hero-visual { border-radius: 26px; overflow: hidden; background: #f4f4f4; border: 1px solid var(--line); width: 100%; height: auto; display: block; aspect-ratio: 4/5; object-fit: cover; }
+.hero-ba { position: relative; display: block; }
+.hero-avant-wrap { position: absolute; bottom: 14px; left: 14px; border-radius: 14px; overflow: hidden; border: 3px solid #fff; box-shadow: 0 8px 28px rgba(0,0,0,.28); width: 22%; cursor: default; }
+.hero-avant-label { display: block; background: rgba(0,0,0,.52); color: #fff; font-size: .72rem; font-weight: 800; text-align: center; padding: 4px 0; letter-spacing: .04em; text-transform: uppercase; }
+.hero-avant-img { width: 100%; height: auto; display: block; }
 .paint-strip { height: 12px; background: linear-gradient(90deg, var(--red-dark), var(--red), #ff7d8b); border-radius: 999px; margin-top: 14px; }
 
 section { padding: 78px 0; }

@@ -120,12 +120,15 @@ def combinar_lado_a_lado(img_avant: Image.Image, img_apres: Image.Image, size: i
     return composite
 
 
+AVANT_PATH = Path(__file__).parent / "public" / "realisations" / "terrebonne-sejour-avant.png"
+APRES_PATH = Path(__file__).parent / "public" / "realisations" / "terrebonne-sejour-apres.png"
+
+
 def main():
     print("=" * 55)
     print("  Peinture Terrebonne - Nueva imagen hero")
     print(f"  Modelo : {MODEL}")
     print(f"  Metodo : AVANT texto -> APRES [img+texto] (v3)")
-    print(f"  Destino: {OUTPUT_PATH}")
     print("=" * 55)
 
     img_avant = generar_avant(PROMPT_AVANT)
@@ -138,10 +141,14 @@ def main():
         print("FALLO: no se pudo generar APRES")
         sys.exit(1)
 
-    composite = combinar_lado_a_lado(img_avant, img_apres, size=1024)
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    img_avant.save(AVANT_PATH, "PNG", optimize=True)
+    img_apres.save(APRES_PATH, "PNG", optimize=True)
+    composite = combinar_lado_a_lado(img_avant, img_apres, size=1024)
     composite.save(OUTPUT_PATH, "PNG", optimize=True)
-    print(f"\n  Guardado: {OUTPUT_PATH}")
+    print(f"\n  Avant  : {AVANT_PATH}")
+    print(f"  Apres  : {APRES_PATH}")
+    print(f"  Composite: {OUTPUT_PATH}")
     print("=" * 55)
 
 
