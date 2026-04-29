@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">Avant apres peinture interieure Terrebonne</title><desc id="d">Salon avant et apres peinture professionnelle a Terrebonne.</desc>
+<defs><linearGradient id="r" x1="0" x2="1"><stop stop-color="#8f0b20"/><stop offset="1" stop-color="#c8102e"/></linearGradient></defs>
+<rect width="1200" height="760" fill="#fff7f8"/><rect x="40" y="54" width="540" height="606" rx="34" fill="#f2e2cf" stroke="#e0c9b0"/><rect x="620" y="54" width="540" height="606" rx="34" fill="#f8f7f3" stroke="#e6e1da"/>
+<path d="M74 470h472v112H74z" fill="#d1b18c"/><path d="M654 470h472v112H654z" fill="#d8c29f"/><path d="M122 152h354v230H122z" fill="#d9c0a3"/><path d="M702 152h354v230H702z" fill="#eceae4"/>
+<rect x="178" y="340" width="292" height="92" rx="28" fill="#74675f"/><rect x="758" y="340" width="292" height="92" rx="28" fill="#6d6864"/><rect x="220" y="284" width="90" height="60" rx="12" fill="#96887c"/><rect x="800" y="284" width="90" height="60" rx="12" fill="#c8102e" opacity=".9"/>
+<rect x="342" y="250" width="90" height="94" rx="12" fill="#887b71"/><rect x="922" y="250" width="90" height="94" rx="12" fill="#ffffff"/>
+<circle cx="514" cy="186" r="20" fill="#b99772"/><circle cx="1094" cy="186" r="20" fill="#c8102e"/><rect x="74" y="616" width="472" height="30" rx="15" fill="#c8102e"/><rect x="654" y="616" width="472" height="30" rx="15" fill="#8f0b20"/>
+<text x="310" y="710" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#8f0b20">AVANT</text><text x="890" y="710" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#8f0b20">APRES</text><path d="M595 0v760" stroke="url(#r)" stroke-width="10"/>
+</svg>

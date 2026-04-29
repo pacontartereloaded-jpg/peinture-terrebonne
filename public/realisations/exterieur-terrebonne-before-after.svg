@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">Avant apres peinture exterieure Terrebonne</title><desc id="d">Facade de maison avant et apres peinture exterieure a Terrebonne.</desc>
+<rect width="1200" height="760" fill="#fff"/><rect x="0" y="0" width="600" height="760" fill="#f1eee8"/><rect x="600" y="0" width="600" height="760" fill="#fff7f8"/>
+<path d="M90 360l210-160 210 160v230H90z" fill="#c7b7a5"/><path d="M690 360l210-160 210 160v230H690z" fill="#f3f1ec"/><path d="M70 360l230-178 230 178" fill="none" stroke="#6d635c" stroke-width="36"/><path d="M670 360l230-178 230 178" fill="none" stroke="#8f0b20" stroke-width="36"/>
+<rect x="180" y="420" width="84" height="170" fill="#7d7168"/><rect x="780" y="420" width="84" height="170" fill="#c8102e"/><rect x="320" y="405" width="112" height="94" fill="#d7e6ec"/><rect x="920" y="405" width="112" height="94" fill="#eaf6fa"/><rect x="310" y="520" width="142" height="70" fill="#9a8b7f"/><rect x="910" y="520" width="142" height="70" fill="#ffffff"/>
+<path d="M0 590h1200v170H0z" fill="#e8efe2"/><path d="M120 622c84-24 218-28 370 6" stroke="#a69383" stroke-width="10" fill="none"/><path d="M720 622c84-24 218-28 370 6" stroke="#c8102e" stroke-width="10" fill="none"/>
+<path d="M600 0v760" stroke="#c8102e" stroke-width="10"/><text x="300" y="710" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#8f0b20">AVANT</text><text x="900" y="710" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#8f0b20">APRES</text>
+</svg>

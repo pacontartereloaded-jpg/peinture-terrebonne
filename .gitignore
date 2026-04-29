@@ -1,0 +1,12 @@
+# Scripts de desarrollo (no necesarios para el sitio)
+generar_imagenes_v3.py
+generate-logo.mjs
+generate-realisation-images.mjs
+
+# Claude Code
+.claude/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
