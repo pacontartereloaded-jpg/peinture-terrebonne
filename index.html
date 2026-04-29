@@ -54,8 +54,8 @@
           <div class="hero-ba">
             <span class="badge">Après</span>
             <img class="hero-visual" src="public/realisations/terrebonne-sejour-apres.png" alt="Sejour repeint par peintres professionnels a Terrebonne, accent bleu marine" width="1024" height="1024" fetchpriority="high">
-            <div class="hero-avant-wrap">
-              <span class="hero-avant-label">Avant</span>
+            <div class="hero-avant-wrap" role="button" tabindex="0" aria-label="Voir la photo avant peinture en grand">
+              <span class="hero-avant-label">Avant — cliquer pour agrandir</span>
               <img class="hero-avant-img" src="public/realisations/terrebonne-sejour-avant.png" alt="Avant peinture interieure Terrebonne" width="200" height="200" loading="lazy">
             </div>
           </div>
@@ -272,6 +272,10 @@
   <aside class="conversion-strip" aria-label="Demande de soumission rapide"><div class="conversion-copy"><div class="conversion-icon">☎</div><div><strong><span class="pulse-dot"></span>Soumission rapide a Terrebonne</strong><span>Parlez directement a un peintre local.</span></div></div><div class="cta-row"><a class="conversion-phone" href="tel:4509147542">450-914-7542</a><a class="btn btn-primary" href="tel:4509147542">Appeler</a><a class="btn btn-secondary" href="#soumission" data-scroll>Soumission</a></div></aside>
 
   <footer class="footer"><div class="container"><div><strong>Peinture Terrebonne</strong><br>Peintres residentiels et commerciaux a Terrebonne</div><div><a href="peintre-terrebonne/index.html">Peintre Terrebonne</a><br><a href="peinture-interieure-terrebonne/index.html">Peinture interieure</a><br><a href="peinture-exterieure-terrebonne/index.html">Peinture exterieure</a></div><div><a href="peintre-commercial-terrebonne/index.html">Peintre commercial</a><br><a href="peintres-mascouche/index.html">Peintres Mascouche</a><br><a href="peintres-repentigny/index.html">Peintres Repentigny</a><br><a href="prix-peintre-terrebonne/index.html">Prix peintre Terrebonne</a></div><div><a href="tel:4509147542">450-914-7542</a><br><a href="mailto:soumission@peintureterrebonne.ca">soumission@peintureterrebonne.ca</a></div></div></footer>
+  <div class="lb" id="lb-avant" role="dialog" aria-modal="true" aria-label="Avant peinture" hidden>
+    <button class="lb-close" aria-label="Fermer">&times;</button>
+    <img class="lb-img" src="public/realisations/terrebonne-sejour-avant.png" alt="Avant peinture interieure Terrebonne" width="1024" height="1024">
+  </div>
   <script src="assets/app.js" defer></script>
 </body>
 </html>
