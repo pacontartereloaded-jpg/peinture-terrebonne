@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Paint drop body -->
+  <path d="M16 1 C15.5 1 7 11.5 5 18 C5 25.2 9.9 31 16 31 C22.1 31 27 25.2 27 18 C25 11.5 16.5 1 16 1Z" fill="#c8102e"/>
+  <!-- Highlight gloss -->
+  <ellipse cx="11.5" cy="17" rx="2.5" ry="4" fill="rgba(255,255,255,0.22)" transform="rotate(-15 11.5 17)"/>
+</svg>
