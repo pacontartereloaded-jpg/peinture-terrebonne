@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!-- Paint drop body -->
-  <path d="M16 1 C15.5 1 7 11.5 5 18 C5 25.2 9.9 31 16 31 C22.1 31 27 25.2 27 18 C25 11.5 16.5 1 16 1Z" fill="#c8102e"/>
-  <!-- Highlight gloss -->
-  <ellipse cx="11.5" cy="17" rx="2.5" ry="4" fill="rgba(255,255,255,0.22)" transform="rotate(-15 11.5 17)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Peinture Terrebonne favicon">
+  <rect width="64" height="64" rx="12" fill="#24140f"/>
+  <g transform="rotate(-10 31 25)">
+    <rect x="9" y="13" width="43" height="17" rx="8" fill="#fff0df"/>
+    <rect x="9" y="27" width="43" height="7" rx="3.5" fill="#c65a2e"/>
+  </g>
+  <path d="M48 25h10v27H42" fill="none" stroke="#fff0df" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
