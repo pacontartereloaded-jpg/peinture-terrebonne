@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="white">
+
+  <!-- Tapas laterales del rodillo (círculos) -->
+  <circle cx="16" cy="48" r="16"/>
+  <circle cx="144" cy="48" r="16"/>
+
+  <!-- Cuerpo principal del rodillo -->
+  <rect x="16" y="32" width="128" height="32"/>
+
+  <!-- Pintura escurriendo (gotas de distintos largos) -->
+  <path d="M30 64 L30 90 Q30 100 36 100 Q42 100 42 90 L42 64 Z"/>
+  <path d="M52 64 L52 106 Q52 117 58 117 Q64 117 64 106 L64 64 Z"/>
+  <path d="M74 64 L74 95 Q74 105 80 105 Q86 105 86 95 L86 64 Z"/>
+  <path d="M96 64 L96 110 Q96 121 102 121 Q108 121 108 110 L108 64 Z"/>
+  <path d="M118 64 L118 88 Q118 98 124 98 Q130 98 130 88 L130 64 Z"/>
+
+  <!-- Barra vertical del marco (baja desde el lado derecho) -->
+  <rect x="152" y="48" width="12" height="58" rx="6"/>
+
+  <!-- Mango diagonal -->
+  <path d="M158 106 L188 168" stroke="white" stroke-width="12" stroke-linecap="round" fill="none"/>
+
+</svg>
